@@ -1,0 +1,1008 @@
+{
+	"info": {
+		"_postman_id": "e7bd0c8d-01f7-47ac-aa71-6fdd20814ae1",
+		"name": "Wallet api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17448422"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/user",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "All",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/user",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 12:23:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"0196b500-852e-72f1-8094-bc2604d9f0df\",\n            \"first_name\": \"John\",\n            \"last_name\": \"Doe\",\n            \"email\": \"john@example.com\",\n            \"balance\": \"1000.00\",\n            \"created_at\": \"2025-05-09T12:23:52.000000Z\",\n            \"updated_at\": \"2025-05-09T12:23:52.000000Z\"\n        },\n        {\n            \"id\": \"0196b500-85d0-7217-8f7a-4a92bf0da6d4\",\n            \"first_name\": \"User\",\n            \"last_name\": \"2\",\n            \"email\": \"user2@example.com\",\n            \"balance\": \"200.00\",\n            \"created_at\": \"2025-05-09T12:23:52.000000Z\",\n            \"updated_at\": \"2025-05-09T12:23:52.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Show",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/user/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"user",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0196b500-852e-72f1-8094-bc2604d9f0df"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Show",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/user/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"user",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0196b500-852e-72f1-8094-bc2604d9f0df"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 12:36:24 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"0196b500-852e-72f1-8094-bc2604d9f0df\",\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"email\": \"john@example.com\",\n        \"balance\": \"1000.00\",\n        \"created_at\": \"2025-05-09T12:23:52.000000Z\",\n        \"updated_at\": \"2025-05-09T12:23:52.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"email\": \"john3@example.com\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\",\r\n    \"balance\": 500.00\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/user",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1,\r\n    \"first_name\": \"John\",\r\n    \"last_name\": \"Doe\",\r\n    \"email\": \"john2@example.com\",\r\n    \"password\": \"123456\",\r\n    \"password_confirmation\": \"123456\",\r\n    \"balance\": 1000.00\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/user",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 12:36:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"0196b50b-ac70-73cc-a2c8-6c1861d1e0de\",\n        \"first_name\": \"John\",\n        \"last_name\": \"Doe\",\n        \"email\": \"john2@example.com\",\n        \"balance\": 1000,\n        \"created_at\": \"2025-05-09T12:36:03.000000Z\",\n        \"updated_at\": \"2025-05-09T12:36:03.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Wallet",
+			"item": [
+				{
+					"name": "Deposit",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 200\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/wallet/deposit",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"wallet",
+								"deposit"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Deposit",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 200\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/wallet/deposit",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"wallet",
+										"deposit"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 12:53:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"0196b51b-3909-715f-b22a-5f94e6c9648d\",\n        \"amount\": 200,\n        \"notes\": null,\n        \"type\": \"DEPOSIT\",\n        \"status\": \"COMPLETED\",\n        \"created_at\": \"2025-05-09T12:53:02.000000Z\",\n        \"updated_at\": \"2025-05-09T12:53:02.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Withdraw",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 2000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/wallet/withdraw",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"wallet",
+								"withdraw"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Withdraw success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 2000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/wallet/withdraw",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"wallet",
+										"withdraw"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 12:47:25 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"0196b516-15f6-73c9-8ac8-45a04db102e3\",\n        \"amount\": -2000,\n        \"notes\": null,\n        \"type\": \"WITHDRAWAL\",\n        \"status\": \"COMPLETED\",\n        \"created_at\": \"2025-05-09T12:47:25.000000Z\",\n        \"updated_at\": \"2025-05-09T12:47:25.000000Z\"\n    }\n}"
+						},
+						{
+							"name": "Insufficient funds",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 2000\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/wallet/withdraw",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"wallet",
+										"withdraw"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 12:51:48 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"You don't have enough funds to make this transaction\",\n    \"code\": 10001,\n    \"codeName\": \"INSUFFICIENT_FUNDS\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Transfer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 80,\r\n    \"receiver_email\": \"john@example.com\"\r\n    // \"receiver_email\": \"user2@example.com\"\r\n}   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base}}/wallet/transfer",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"wallet",
+								"transfer"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Insufficient funds",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 2000,\r\n    \"receiver_email\": \"user2@example.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/wallet/transfer",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"wallet",
+										"transfer"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 12:54:41 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"message\": \"You don't have enough funds to make this transaction\",\n    \"code\": 10001,\n    \"codeName\": \"INSUFFICIENT_FUNDS\"\n}"
+						},
+						{
+							"name": "Successful transfer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"amount\": 20,\r\n    \"receiver_email\": \"user2@example.com\"\r\n}   ",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base}}/wallet/transfer",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"wallet",
+										"transfer"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 12:57:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"0196b51f-03e5-724c-a564-66f3d53e66a7\",\n        \"amount\": -20,\n        \"notes\": null,\n        \"type\": \"TRANSFER\",\n        \"status\": \"COMPLETED\",\n        \"created_at\": \"2025-05-09T12:57:10.000000Z\",\n        \"updated_at\": \"2025-05-09T12:57:10.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Transaction history",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/transaction",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"transaction"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Transaction history",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/transaction",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"transaction"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 12:59:53 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"0196b520-4ea9-73d2-919c-954b106f0146\",\n            \"amount\": \"80.00\",\n            \"notes\": null,\n            \"type\": \"RECEIVE_TRANSFER\",\n            \"status\": \"COMPLETED\",\n            \"created_at\": \"2025-05-09T12:58:35.000000Z\",\n            \"updated_at\": \"2025-05-09T12:58:35.000000Z\"\n        },\n        {\n            \"id\": \"0196b51f-03e5-724c-a564-66f3d53e66a7\",\n            \"amount\": \"-20.00\",\n            \"notes\": null,\n            \"type\": \"TRANSFER\",\n            \"status\": \"COMPLETED\",\n            \"created_at\": \"2025-05-09T12:57:10.000000Z\",\n            \"updated_at\": \"2025-05-09T12:57:10.000000Z\"\n        },\n        {\n            \"id\": \"0196b51d-d1b2-71c0-a743-e61d57c358c1\",\n            \"amount\": \"-300.00\",\n            \"notes\": null,\n            \"type\": \"TRANSFER\",\n            \"status\": \"COMPLETED\",\n            \"created_at\": \"2025-05-09T12:55:52.000000Z\",\n            \"updated_at\": \"2025-05-09T12:55:52.000000Z\"\n        },\n        {\n            \"id\": \"0196b51c-fb19-732a-9746-f8e3e167092e\",\n            \"amount\": \"-300.00\",\n            \"notes\": null,\n            \"type\": \"TRANSFER\",\n            \"status\": \"COMPLETED\",\n            \"created_at\": \"2025-05-09T12:54:57.000000Z\",\n            \"updated_at\": \"2025-05-09T12:54:57.000000Z\"\n        },\n        {\n            \"id\": \"0196b51b-3909-715f-b22a-5f94e6c9648d\",\n            \"amount\": \"200.00\",\n            \"notes\": null,\n            \"type\": \"DEPOSIT\",\n            \"status\": \"COMPLETED\",\n            \"created_at\": \"2025-05-09T12:53:02.000000Z\",\n            \"updated_at\": \"2025-05-09T12:53:02.000000Z\"\n        },\n        {\n            \"id\": \"0196b516-15f6-73c9-8ac8-45a04db102e3\",\n            \"amount\": \"-2000.00\",\n            \"notes\": null,\n            \"type\": \"WITHDRAWAL\",\n            \"status\": \"COMPLETED\",\n            \"created_at\": \"2025-05-09T12:47:25.000000Z\",\n            \"updated_at\": \"2025-05-09T12:47:25.000000Z\"\n        },\n        {\n            \"id\": \"0196b515-9635-70df-9a65-f9748be37230\",\n            \"amount\": \"2000.00\",\n            \"notes\": null,\n            \"type\": \"DEPOSIT\",\n            \"status\": \"COMPLETED\",\n            \"created_at\": \"2025-05-09T12:46:52.000000Z\",\n            \"updated_at\": \"2025-05-09T12:46:52.000000Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Initial balance",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base}}/transaction",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"transaction"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 13:12:23 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": \"0196b52c-405b-721e-930c-ca25d7ec5f08\",\n            \"amount\": \"500.00\",\n            \"notes\": \"Initial balance\",\n            \"type\": \"DEPOSIT\",\n            \"status\": \"COMPLETED\",\n            \"created_at\": \"2025-05-09T13:11:38.000000Z\",\n            \"updated_at\": \"2025-05-09T13:11:38.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Find transaction",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base}}/transaction/:id",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"transaction",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0196b520-4ea9-73d2-919c-954b106f0146"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Exemple",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base}}/transaction/:id",
+									"host": [
+										"{{base}}"
+									],
+									"path": [
+										"transaction",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0196b520-4ea9-73d2-919c-954b106f0146"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 09 May 2025 13:02:59 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": \"0196b520-4ea9-73d2-919c-954b106f0146\",\n        \"amount\": \"80.00\",\n        \"notes\": null,\n        \"type\": \"RECEIVE_TRANSFER\",\n        \"status\": \"COMPLETED\",\n        \"created_at\": \"2025-05-09T12:58:35.000000Z\",\n        \"updated_at\": \"2025-05-09T12:58:35.000000Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base}}/hello",
+					"host": [
+						"{{base}}"
+					],
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Test",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base}}/hello",
+							"host": [
+								"{{base}}"
+							],
+							"path": [
+								"hello"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.6"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 May 2025 12:05:51 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": null,\n    \"status\": \"success\",\n    \"message\": \"hello\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
