@@ -3,12 +3,14 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Services\UserService;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
+    public function __construct(private UserService $userService) {}
     /**
      * Seed the application's database.
      */
@@ -18,7 +20,7 @@ class DatabaseSeeder extends Seeder
         User::unguard();
         User::query()->delete();
 
-        User::create([
+        $this->userService->createUser([
             'first_name' => 'John',
             'last_name' => 'Doe',
             'email' => 'john@example.com',
@@ -26,7 +28,7 @@ class DatabaseSeeder extends Seeder
             'balance' => 1000
         ]);
 
-        User::create([
+        $this->userService->createUser([
             'first_name' => 'User',
             'last_name' => '2',
             'email' => 'user2@example.com',
